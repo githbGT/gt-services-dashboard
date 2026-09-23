@@ -1,0 +1,14 @@
+<!-- דוגמה להטמעה באתר העירוני. יש להחליף את כתובת ה-src בכתובת שבה הקובץ יושב. -->
+<iframe id="gt-dashboard"
+        src="https://www.example.org.il/dashboards/index.html"
+        title="דשבורד קטלוג השירותים העירוני"
+        style="width:100%;height:2000px;border:0;display:block"
+        loading="lazy"></iframe>
+<script>
+  // התאמת גובה ה-iframe לתוכן, כדי שלא יופיע פס גלילה פנימי
+  window.addEventListener("message", function (e) {
+    if (e.data && e.data.type === "gt-dashboard-height") {
+      document.getElementById("gt-dashboard").style.height = e.data.height + "px";
+    }
+  });
+</script>
